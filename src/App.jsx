@@ -9,7 +9,7 @@ import HomePage from "./pages/HomePage";
 import MainLayout from "./layout/MainLayout";
 import ConfirmPassword from "./pages/ConfirmPassword";
 import LoginPage from "./pages/LoginPage"
-import ResetPassword from "./components/ResetPassword"
+import ResetPassword from "./pages/ResetPassword"
 
 const router = createBrowserRouter(
   createRoutesFromElements(

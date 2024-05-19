@@ -26,7 +26,7 @@ const socialMediaOptions = [
   
               <div className="mb-4">
                 <p className="text-sm font-normal leading-[30px]">Email address</p>
-                <input type="email" placeholder="Samuel c@gmail.com" className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
+                <input type="email" placeholder="SamuelC@gmail.com" className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
               </div>
   
               <div className="mb-4">

@@ -8,9 +8,8 @@ import {
 import HomePage from "./pages/HomePage";
 import MainLayout from "./layout/MainLayout";
 import ConfirmPassword from "./pages/ConfirmPassword";
-import LoginPage from "./pages/LoginPage"
-import ResetPassword from "./pages/ResetPassword";
 import LoginPage from "./pages/LoginPage";
+import ResetPassword from "./pages/ResetPassword";
 import RegisterNumber from "./pages/RegisterNumber";
 import SignupPage from "./pages/SignupPage";
 

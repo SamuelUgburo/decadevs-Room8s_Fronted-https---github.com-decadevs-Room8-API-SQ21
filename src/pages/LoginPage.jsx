@@ -1,4 +1,4 @@
-import React from 'react';
+
 import '../index.css';  // Ensure Tailwind CSS is imported
 
 function LoginPage() {

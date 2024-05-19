@@ -23,7 +23,6 @@ const router = createBrowserRouter(
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/registernumber" element={<RegisterNumber/>} />
       <Route path="/signup" element={<SignupPage/>}/>
-
     </Route>
   )
 );

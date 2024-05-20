@@ -20,8 +20,14 @@ const socialMediaOptions = [
               <h2 className="text-2xl font-semibold text-center leading-[33.5px] font-['Oxygen']">Create an account</h2>
   
               <div className="mb-4">
-                <p className="text-sm font-normal leading-[30px]">Username</p>
-                <input type="text" placeholder="Samuel" required className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
+                <p className="text-sm font-normal leading-[30px]">First name</p>
+                <input type="text" placeholder="First name" required className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
+              </div>
+
+              
+              <div className="mb-4">
+                <p className="text-sm font-normal leading-[30px]">Last name</p>
+                <input type="text" placeholder="Last name" required className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
               </div>
   
               <div className="mb-4">

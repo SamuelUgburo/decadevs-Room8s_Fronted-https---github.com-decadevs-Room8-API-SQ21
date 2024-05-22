@@ -3,7 +3,7 @@ import React from 'react'
 const AptDescription = () => {
   return (
     <div className='my-16 ml-5 p-5 flex-col'>
-                <div className='flex justify-between w-full sm:mb-32 md:mb-20 '>
+                <div className='flex justify-between w-full mb-22 '>
                     <div className='w-full h-[134px]  flex flex-col justify-between '>
                         <div className='w-full font-bold md:text-3xl md:leading-[48px] '><p > 3 Bedroom Flat, Treasure Island Estate</p></div>
                         <div className='w-full font-normal leading-[30px] text-pry-color'><p > 2 rooms available</p></div>
@@ -33,7 +33,7 @@ const AptDescription = () => {
                             </div>
                             
                         </div>
-                        <div className='sm:flex lg:flex-col justify-between'>
+                        <div className='flex-col justify-between'>
                             <div className='flex-col mb-6 space-y-2  '>
                                 <p className='font-bold md:text-2xl mb-2'>PRICES</p>
                                 <div className='flex-col space-y-2 opacity-45 font-normal text-lg'>
@@ -41,14 +41,14 @@ const AptDescription = () => {
                                 <p className='text-sm md:text-base'>Service Charge : N30,000</p>
                                 </div>
                             </div>
-                            <div >
+                            <div className=' text-left ' >
                                 <p className='font-bold md:text-2xl mb-3'> MEET THE REALTOR</p>
                                 <div className='flex  w-full'>
-                                        <div className='mr-2 flex justify-center items-center'><img src="./src/assets/Images/realtorpic.png" alt="" srcset="" /></div>
-                                        <div className='flex-col  md:space-y-2'>
+                                        <div className='mr-2 flex justify-center items-center'><img className="size-20 md:size-30" src="./src/assets/Images/realtorpic.png" alt="" srcset="" /></div>
+                                        <div className='flex-col text-sm  md:text-2xl md:space-y-2'>
                                             <p className=' md:text-xl mb-1 flex md:justify-center'>Bankole Yufus</p>
                                             <p>BankoleYufus@gmail.com</p>
-                                            <p className=' flex ml-6 w-[120px] text-[#219653] '> <a className='flex border p-1  border-[#219653] rounded-full w-26' href=""> <img className='ml-1 mr-3' src="./src/assets/Images/chat.png" alt="" />  Start chat</a></p>
+                                            <p className=' flex ml-6  text-[#219653] '> <a className='flex border p-1  border-[#219653] rounded-full w-26' href=""> <img className='ml-1 mr-3 size-5 md:size-7' src="./src/assets/Images/chat.png" alt="" />  Start chat</a></p>
                                             <p>Contact: 09085757757</p>
                                         </div>
                                 </div>

@@ -9,7 +9,7 @@ const PagePath = () => {
         <p className='mr-2'><a href="/">Home</a></p>
        <BiChevronRight className='size-7 colo'/>
 
-        <p className='mr-2'><a href="">Product</a></p>
+        <p className='mr-2'><a href="/apartment">Product</a></p>
         <BiChevronRight className='size-7 colo'/>
         <p className='mr-2 text-pry-color text-xs md:text-lg'>3 Bedroom Flat at sunny-side estate</p>
     </div>

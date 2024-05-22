@@ -4,7 +4,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const ApartmentImage1 = () => {
   return (
-    <div className='w-full p-10 h-[300px] md:h-[550px] mb-10'>
+    <div className='w-full p-10 h-[450px] md:h-[550px] mb-10'>
       {/* Grid Layout for Large Screens */}
       <div className='hidden lg:grid grid-cols-3 justify-items-stretch items-stretch gap-3'>
         <img className='w-full h-[271px]' src="./src/assets/Images/aptpic1.png" alt="" />

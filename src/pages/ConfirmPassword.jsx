@@ -38,7 +38,7 @@ const ConfirmPassword = () => {
         </form>
         <p className="mt-4 text-sm font-normal text-customGray">
           Go back to{' '}
-          <a href="#" className="text-customTeal underline font-semibold">
+          <a href="/login" className="text-customTeal underline font-semibold">
             Sign in
           </a>
         </p>

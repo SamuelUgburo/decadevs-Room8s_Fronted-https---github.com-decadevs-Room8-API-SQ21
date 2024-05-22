@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImage from "../assets/Images/bg-image.jpg"; // Import the image
+import backgroundImage from "../assets/Images/bg-image.jpg"; 
 
 export default function ResetPassword() {
   return (

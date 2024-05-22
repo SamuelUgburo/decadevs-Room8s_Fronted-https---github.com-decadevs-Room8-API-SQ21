@@ -12,6 +12,9 @@ import LoginPage from "./pages/LoginPage";
 import ResetPassword from "./pages/ResetPassword";
 import RegisterNumber from "./pages/RegisterNumber";
 import SignupPage from "./pages/SignupPage";
+import SuccessfulPasswdReset from "./pages/SuccessfulPasswdReset";
+import KYCPage from "./pages/KYCPage";
+import ProfilePage from "./pages/ProfilePage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +25,9 @@ const router = createBrowserRouter(
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/registernumber" element={<RegisterNumber/>} />
       <Route path="/signup" element={<SignupPage/>}/>
+      <Route path="/profilepage" element={<ProfilePage/>} />
+      <Route path="/successfulpasswdreset" element= {<SuccessfulPasswdReset/>}/>
+      <Route path="kycpage" element={<KYCPage/>} />
     </Route>
   )
 );

@@ -16,6 +16,7 @@ import UserProfilePage from "./pages/UserProfilePage";
 import ProfileLayout from "./layout/ProfileLayout";
 import AboutMePage from "./pages/AboutMePage";
 import ApartmentPage from "./pages/ApartmentPage";
+import ApartmentDetailPage from "./pages/ApartmentDetailPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
         <Route path="/profile/about-me" element={<AboutMePage />} />
       </Route>
       <Route path="/apartment" element={<ApartmentPage />} />
+      <Route path="/ApartmentDetail" element={<ApartmentDetailPage/>}/>
     </Route>
   )
 );

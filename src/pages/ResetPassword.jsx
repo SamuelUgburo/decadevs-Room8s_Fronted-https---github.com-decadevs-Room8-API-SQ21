@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import backgroundImage from "../assets/Images/bg-image.jpg"; // Import the image
+import { forgotPassword } from "../services/auth/AuthService";
 
 export default function ResetPassword() {
+  const [email, setEmail] = useState('');
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+
+    await forgotPassword(email);
+  };
   return (
     <div
       className="reset-password-page bg-cover bg-center flex justify-center items-center min-h-screen"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="card bg-white p-12 shadow-md flex flex-col justify-center items-center w-full max-w-lg">
-        <form method="post" className="w-full">
+        <form method="post" className="w-full" onSubmit={submitForm}>
           <div className="text-center mb-6">
             <h1 className="text-pry-color text-3xl font-bold">Room8s</h1>
           </div>
@@ -27,6 +35,8 @@ export default function ResetPassword() {
               <input
                 type="email" 
                 id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="rounded-md form-input w-full py-3 pl-10 pr-4 border border-gray-300"
                 placeholder="SamuelC@gmail.com"
                 required
@@ -37,7 +47,7 @@ export default function ResetPassword() {
           <div className="input-group w-full">
             <button
               type="submit"
-              className="rounded-md w-full py-3 px-4 bg-pry-color text-white font-semibold"
+              className="rounded-md w-full py-3 px-4 bg-pry-color text-white font-semibold hover:bg-teal-500"
             >
               Send reset instructions
             </button>

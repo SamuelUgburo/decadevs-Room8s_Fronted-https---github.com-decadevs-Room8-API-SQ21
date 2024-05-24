@@ -1,74 +1,33 @@
-import { toast } from 'react-toastify';
-import axiosClient from '../../utils/AxiosClient';
+import axiosClient, { handleRequest } from '../../utils/AxiosClient';
 
-export async function signup(newUser){
-    const loadingToast = toast.loading("Signing up...");
-  
-    try {
-        const response = await axiosClient.post('/Account/register', newUser); 
-        const apiResponse = response.data;
-        if (apiResponse.isSuccessful) {
-            toast.update(loadingToast, {
-            render: "Signup successful, Please confirm your email!",
-            type: "success",
-            isLoading: false,
-            autoClose: 3000,
-            closeOnClick: true
-            });
-        } else {
-            toast.update(loadingToast, {
-            render: "Something went wrong, please try again.",
-            type: "error",
-            isLoading: false,
-            autoClose: 3000,
-            closeOnClick: true
-            });
-        }
-        } catch (error) {
-        toast.update(loadingToast, {
-            render: "Something went wrong, please try again.",
-            type: "error",
-            isLoading: false,
-            autoClose: 3000,
-            closeOnClick: true
-        });
-        console.error('Error Signing up:', error);
+
+export async function signup(newUser) {
+    return await handleRequest({
+        loadingMessage: "Signing up...",
+        successMessage: "Signup successful, Please confirm your email!",
+        errorMessage: "Something went wrong, please try again.",
+        request: () => axiosClient.post('/Account/register', newUser)
+    });
+}
+
+export async function loginUser(loginDetails) {
+    const result = await handleRequest({
+        loadingMessage: "Logging in...",
+        successMessage: "Login successful!",
+        errorMessage: "Something went wrong, please try again.",
+        request: () => axiosClient.post('/Account/login', loginDetails)
+    });
+
+    if (result) {
+        return result.token;
     }
 }
 
-export async function loginUser(loginDetails){
-    
-    const loadingToast = toast.loading("Logging in...");
-
-    try {
-        const response = await axiosClient.post('/Account/login', loginDetails); 
-        const apiResponse = response.data;
-        if (apiResponse.isSuccessful) {
-            toast.update(loadingToast, {
-                render: "Login successful!",
-                type: "success",
-                isLoading: false,
-                autoClose: 3000,
-                closeOnClick: true
-            });
-            return apiResponse.data.token;
-        } else {
-            toast.update(loadingToast, {
-                render: "Something went wrong, please try again.",
-                type: "error",
-                isLoading: false,
-                autoClose: 3000,
-                closeOnClick: true
-            });
-        }
-    } catch (error) {
-        toast.update(loadingToast, {
-        render: "Something went wrong, please try again.",
-        type: "error",
-        isLoading: false,
-        autoClose: 3000,
-        closeOnClick: true
-        });
-        console.error('Error Signing up:', error);
-    }
+export async function forgotPassword(email) {
+    return await handleRequest({
+        loadingMessage: "Sending password reset email...",
+        successMessage: "Password reset email sent!",
+        errorMessage: "Failed to send password reset email, please try again.",
+        request: () => axiosClient.post(`/Account/forgot-password?email=${email}`)
+    });
 }

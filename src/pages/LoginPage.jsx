@@ -1,36 +1,82 @@
-
-import '../index.css';  // Ensure Tailwind CSS is imported
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import axiosClient from '../utils/AxiosClient';
+import { toast } from 'react-toastify';
 
 function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    const loginDetails = {
+      email,
+      password
+    };
+
+    const loadingToast = toast.loading("Logging in...");
+
+    try {
+      const response = await axiosClient.post('/Account/login', loginDetails); 
+      const apiResponse = response.data;
+      if (apiResponse.isSuccessful) {
+        toast.update(loadingToast, {
+          render: "Login successful!",
+          type: "success",
+          isLoading: false,
+          autoClose: 3000,
+          closeOnClick: true
+        });
+      } else {
+        toast.update(loadingToast, {
+          render: "Something went wrong, please try again.",
+          type: "error",
+          isLoading: false,
+          autoClose: 3000,
+          closeOnClick: true
+        });
+      }
+    } catch (error) {
+      toast.update(loadingToast, {
+        render: "Something went wrong, please try again.",
+        type: "error",
+        isLoading: false,
+        autoClose: 3000,
+        closeOnClick: true
+      });
+      console.error('Error Signing up:', error);
+    }
+  };
+
   return (
     <>
       <div className="h-screen flex items-center justify-center bg-cover bg-[url('./assets/Images/bg-image.jpg')]">
         <div className="relative  w-[490px] h-[450px] bg-white rounded-[5px] px-[0px] py-[0px] shadow-md">
           <div className="w-full p-10">
-            <form action="">
+            <form action="" onSubmit={submitForm}>
               <h1 className="text-2xl font-bold text-pry-color leading-[74.5px] text-center font-'Oxygen' ">Room8s</h1>
               <h2 className="text-2xl font-semibold text-center leading-[33.5px] font-'Oxygen'">Welcome back to Room8s</h2>
 
               <div className="my-2">
                 <p className="text-sm font-normal leading-[30px]">Username</p>
-                <input type="text" placeholder="SamuelC@gmail.com" required className="w-full h-11 p-3 border border-gray-300 rounded-lg  focus:outline-none focus:ring-2 focus:ring-pry-color" />
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="SamuelC@gmail.com" required className="w-full h-11 p-3 border border-gray-300 rounded-lg  focus:outline-none focus:ring-2 focus:ring-pry-color" />
               </div>
 
               <div className="my-2">
                 <p className="text-sm font-normal leading-[30px]">Password</p>
-                <input type="password" placeholder="*********" className="w-full h-11 p-3 border border-gray-300 rounded-lg  focus:outline-none focus:ring-2 focus:ring-pry-color" />
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="*********" className="w-full h-11 p-3 border border-gray-300 rounded-lg  focus:outline-none focus:ring-2 focus:ring-pry-color" />
               </div>
 
               <div className="flex justify-between text-sm">
-                <a href="" className="text-pry-color underline">Forgot Password</a>
+                <Link to="/reset-password" className="text-pry-color underline hover:text-teal-500">Forgot Password</Link>
               </div>
 
-              <button type="submit" className="mt-3 pt-2 w-full h-10 bg-pry-color text-white px-[10px] py-[12px] rounded-[5px] cursor-pointer border-none ">
+              <button type="submit" className="mt-3 pt-2 w-full h-10 bg-pry-color text-white px-[10px] py-[12px] rounded-[5px] cursor-pointer border-none hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500">
                 LOG IN
               </button>
 
-              <div className="mt-3 text-sm text-center ">
-                <p>Don't have an account? <a href="#" className="text-pry-color">Register</a></p>
+              <div className="mt-3 text-sm text-center">
+                <p>Don't have an account? <Link to="/signup" className="text-pry-color hover:text-teal-500">Register</Link></p>
               </div>
             </form>
           </div>

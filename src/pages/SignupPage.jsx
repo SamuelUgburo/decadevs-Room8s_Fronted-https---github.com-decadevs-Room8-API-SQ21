@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import axiosClient from '../utils/AxiosClient';
 import { toast } from 'react-toastify';
+import { Link } from "react-router-dom";
+import { signup } from "../services/auth/AuthService";
+
 
 const socialMediaOptions = [
     'Instagram',
@@ -29,38 +32,7 @@ const socialMediaOptions = [
         social
       };
   
-      const loadingToast = toast.loading("Signing up...");
-  
-      try {
-        const response = await axiosClient.post('/Account/register', newUser); 
-        const apiResponse = response.data;
-        if (apiResponse.isSuccessful) {
-          toast.update(loadingToast, {
-            render: "Signup successful, Please confirm your email!",
-            type: "success",
-            isLoading: false,
-            autoClose: 3000,
-            closeOnClick: true
-          });
-        } else {
-          toast.update(loadingToast, {
-            render: "Something went wrong, please try again.",
-            type: "error",
-            isLoading: false,
-            autoClose: 3000,
-            closeOnClick: true
-          });
-        }
-      } catch (error) {
-        toast.update(loadingToast, {
-          render: "Something went wrong, please try again.",
-          type: "error",
-          isLoading: false,
-          autoClose: 3000,
-          closeOnClick: true
-        });
-        console.error('Error Signing up:', error);
-      }
+      signup(newUser);
     };
     
 
@@ -135,7 +107,7 @@ const socialMediaOptions = [
               <button type="submit" onClick={submitForm} className="mt-3 w-full h-10 bg-[#7FDBCA] text-white rounded-[5px] cursor-pointer hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500">Signup</button>
   
               <div className="mt-3 text-sm text-center">
-                <p>Already have an account? <a href="#" className="text-[#7FDBCA] hover:underline">Login</a></p>
+                <p>Already have an account? <Link to="/login" className="text-[#7FDBCA] hover:underline">Login</Link></p>
               </div>
             </form>
           </div>

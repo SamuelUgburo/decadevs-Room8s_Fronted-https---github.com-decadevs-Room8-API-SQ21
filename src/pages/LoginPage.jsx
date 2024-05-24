@@ -39,7 +39,7 @@ function LoginPage() {
               </div>
 
               <div className="flex justify-between text-sm">
-                <Link to="/reset-password" className="text-pry-color underline hover:text-teal-500">Forgot Password</Link>
+                <Link to="/forgot-password" className="text-pry-color underline hover:text-teal-500">Forgot Password</Link>
               </div>
 
               <button type="submit" className="mt-3 pt-2 w-full h-10 bg-pry-color text-white px-[10px] py-[12px] rounded-[5px] cursor-pointer border-none hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500">

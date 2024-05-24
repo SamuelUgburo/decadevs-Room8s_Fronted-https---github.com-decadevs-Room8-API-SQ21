@@ -32,7 +32,8 @@ export async function handleRequest({ loadingMessage, successMessage, errorMessa
               autoClose: 3000,
               closeOnClick: true
           });
-          throw new Error(apiResponse.message || "Request failed");
+          console.log(apiResponse.message || "Request failed");
+          return apiResponse.data;
       }
   } catch (error) {
       toast.update(loadingToast, {

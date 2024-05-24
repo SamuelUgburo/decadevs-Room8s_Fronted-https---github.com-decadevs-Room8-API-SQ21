@@ -9,9 +9,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import HomePage from "./pages/HomePage";
 import MainLayout from "./layout/MainLayout";
-import ConfirmPassword from "./pages/ConfirmPassword";
-import LoginPage from "./pages/LoginPage";
 import ResetPassword from "./pages/ResetPassword";
+import LoginPage from "./pages/LoginPage";
+import ForgotPassword from "./pages/ForgotPassword";
 import RegisterNumber from "./pages/RegisterNumber";
 import SignupPage from "./pages/SignupPage";
 import ProfileLayout from "./layout/ProfileLayout";
@@ -22,9 +22,9 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />} >
       <Route index element={<HomePage />} />
-      <Route path="/confirmpassword" element={<ConfirmPassword />} />
-      <Route path="/login" element={<LoginPage />} />
       <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/registernumber" element={<RegisterNumber/>} />
       <Route path="/signup" element={<SignupPage/>}/>
       <Route path="/profile" element={<ProfileLayout />}>

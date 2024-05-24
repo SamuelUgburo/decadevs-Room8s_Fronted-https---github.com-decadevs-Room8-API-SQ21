@@ -24,10 +24,19 @@ export async function loginUser(loginDetails) {
 }
 
 export async function forgotPassword(email) {
-    return await handleRequest({
+    const result = await handleRequest({
         loadingMessage: "Sending password reset email...",
         successMessage: "Password reset email sent!",
         errorMessage: "Failed to send password reset email, please try again.",
         request: () => axiosClient.post(`/Account/forgot-password?email=${email}`)
+    });
+}
+
+export async function resetPassword(resetObj){
+    const result = await handleRequest({
+        loadingMessage: "Resetting your password...",
+        successMessage: "Password successfully reset",
+        errorMessage: "Failed to reset password, please try again.",
+        request: () => axiosClient.post("/Account/reset-password", resetObj)
     });
 }

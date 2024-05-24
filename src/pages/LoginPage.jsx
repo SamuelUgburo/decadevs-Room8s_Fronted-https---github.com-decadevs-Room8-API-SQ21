@@ -1,11 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import axiosClient from '../utils/AxiosClient';
-import { toast } from 'react-toastify';
+import { loginUser } from '../services/auth/AuthService';
+import { useAuth } from '../context/AuthContext';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useAuth();
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -14,38 +15,8 @@ function LoginPage() {
       password
     };
 
-    const loadingToast = toast.loading("Logging in...");
-
-    try {
-      const response = await axiosClient.post('/Account/login', loginDetails); 
-      const apiResponse = response.data;
-      if (apiResponse.isSuccessful) {
-        toast.update(loadingToast, {
-          render: "Login successful!",
-          type: "success",
-          isLoading: false,
-          autoClose: 3000,
-          closeOnClick: true
-        });
-      } else {
-        toast.update(loadingToast, {
-          render: "Something went wrong, please try again.",
-          type: "error",
-          isLoading: false,
-          autoClose: 3000,
-          closeOnClick: true
-        });
-      }
-    } catch (error) {
-      toast.update(loadingToast, {
-        render: "Something went wrong, please try again.",
-        type: "error",
-        isLoading: false,
-        autoClose: 3000,
-        closeOnClick: true
-      });
-      console.error('Error Signing up:', error);
-    }
+    const token = await loginUser(loginDetails);
+    if(token) login(token);
   };
 
   return (

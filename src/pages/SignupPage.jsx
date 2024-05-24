@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import axiosClient from '../utils/AxiosClient';
-import { toast } from 'react-toastify';
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { signup } from "../services/auth/AuthService";
 
@@ -32,7 +30,7 @@ const socialMediaOptions = [
         social
       };
   
-      signup(newUser);
+      await signup(newUser);
     };
     
 

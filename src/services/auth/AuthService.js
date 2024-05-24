@@ -35,3 +35,40 @@ export async function signup(newUser){
         console.error('Error Signing up:', error);
     }
 }
+
+export async function loginUser(loginDetails){
+    
+    const loadingToast = toast.loading("Logging in...");
+
+    try {
+        const response = await axiosClient.post('/Account/login', loginDetails); 
+        const apiResponse = response.data;
+        if (apiResponse.isSuccessful) {
+            toast.update(loadingToast, {
+                render: "Login successful!",
+                type: "success",
+                isLoading: false,
+                autoClose: 3000,
+                closeOnClick: true
+            });
+            return apiResponse.data.token;
+        } else {
+            toast.update(loadingToast, {
+                render: "Something went wrong, please try again.",
+                type: "error",
+                isLoading: false,
+                autoClose: 3000,
+                closeOnClick: true
+            });
+        }
+    } catch (error) {
+        toast.update(loadingToast, {
+        render: "Something went wrong, please try again.",
+        type: "error",
+        isLoading: false,
+        autoClose: 3000,
+        closeOnClick: true
+        });
+        console.error('Error Signing up:', error);
+    }
+}

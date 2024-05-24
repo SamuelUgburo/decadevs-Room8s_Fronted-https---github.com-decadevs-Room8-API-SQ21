@@ -16,6 +16,7 @@ import RegisterNumber from "./pages/RegisterNumber";
 import SignupPage from "./pages/SignupPage";
 import ProfileLayout from "./layout/ProfileLayout";
 import AboutMePage from "./pages/AboutMePage";
+import { AuthProvider } from "./context/AuthContext";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -38,8 +39,10 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router} />
-      <ToastContainer />
+      <AuthProvider>
+        <RouterProvider router={router} />
+        <ToastContainer />
+      </AuthProvider>
     </>
   )
 }

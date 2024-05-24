@@ -4,6 +4,8 @@ import {
   createRoutesFromElements,
   RouterProvider
 } from "react-router-dom"
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import HomePage from "./pages/HomePage";
 import MainLayout from "./layout/MainLayout";
@@ -37,6 +39,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <ToastContainer />
     </>
   )
 }

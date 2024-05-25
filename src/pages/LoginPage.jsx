@@ -7,6 +7,7 @@ function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { login } = useAuth();
+  const navigate = useNavigate();
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -16,7 +17,10 @@ function LoginPage() {
     };
 
     const token = await loginUser(loginDetails);
-    if(token) login(token);
+    if(token){
+      login(token);
+      navigate("/");
+    } 
   };
 
   return (

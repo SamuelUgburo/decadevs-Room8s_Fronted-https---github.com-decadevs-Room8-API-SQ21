@@ -26,7 +26,7 @@ export async function handleRequest({ loadingMessage, successMessage, errorMessa
           return apiResponse.data;
       } else {
           toast.update(loadingToast, {
-              render: errorMessage,
+              render: apiResponse.message || errorMessage,
               type: "error",
               isLoading: false,
               autoClose: 3000,

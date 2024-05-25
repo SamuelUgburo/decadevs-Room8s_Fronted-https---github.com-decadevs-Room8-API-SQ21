@@ -64,9 +64,7 @@ const RealtorsProfile = () => {
       </div>
       </div>
 
-    </div>
-    
-    
+    </div>  
   );
 };
 

@@ -1,6 +1,4 @@
 import React from 'react';
-import ApartmentSearchBar from '../components/ApartmentSearchBar';
-
 
 const RealtorsProfile = () => {
   return (

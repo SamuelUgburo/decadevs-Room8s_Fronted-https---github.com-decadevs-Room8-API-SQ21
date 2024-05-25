@@ -20,6 +20,7 @@ import AboutMePage from "./pages/AboutMePage";
 import { AuthProvider } from "./context/AuthContext";
 import ApartmentPage from "./pages/ApartmentPage";
 import RealtorsProfile from "./pages/RealtorsProfile";
+import ApartmentDetailPage from "./pages/ApartmentDetailPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,6 +32,8 @@ const router = createBrowserRouter(
       <Route path="/registernumber" element={<RegisterNumber/>} />
       <Route path="/signup" element={<SignupPage/>}/>
       <Route path="/apartment" element={<ApartmentPage/>} />
+      <Route path="/user-profile" element={<UserProfilePage/>} />
+      <Route path="/apartment-details" element={<ApartmentDetailPage/>} />
       <Route path="/realtorsprofile" element={<RealtorsProfile/>} />
     </Route>
   )

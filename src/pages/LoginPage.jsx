@@ -22,7 +22,7 @@ function LoginPage() {
   return (
     <>
       <div className="h-screen flex items-center justify-center bg-cover bg-[url('./assets/Images/bg-image.jpg')]">
-        <div className="relative  w-[490px] h-[450px] bg-white rounded-[5px] px-[0px] py-[0px] shadow-md">
+        <div className="relative  w-[578px] h-[490px] bg-white rounded-[5px] px-[0px] py-[0px] shadow-md">
           <div className="w-full p-10">
             <form action="" onSubmit={submitForm}>
               <h1 className="text-2xl font-bold text-pry-color leading-[74.5px] text-center font-'Oxygen' ">Room8s</h1>

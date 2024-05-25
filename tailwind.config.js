@@ -21,6 +21,10 @@ export default {
         customgray800: '#212121',
         customgray900: '#101828'
       },
+      width: {
+        'custom-998': '998px',
+        'custom-900': '900px',
+      },
       },
   },
   plugins: [],

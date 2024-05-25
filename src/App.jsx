@@ -13,6 +13,7 @@ import ResetPassword from "./pages/ResetPassword";
 import RegisterNumber from "./pages/RegisterNumber";
 import SignupPage from "./pages/SignupPage";
 import ApartmentPage from "./pages/ApartmentPage";
+import RealtorsProfile from "./pages/RealtorsProfile";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route path="/registernumber" element={<RegisterNumber/>} />
       <Route path="/signup" element={<SignupPage/>}/>
       <Route path="/apartment" element={<ApartmentPage/>} />
+      <Route path="/realtorsprofile" element={<RealtorsProfile/>} />
     </Route>
   )
 );

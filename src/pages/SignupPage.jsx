@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { signup } from "../services/auth/AuthService";
 
 
 const socialMediaOptions = [
@@ -11,6 +14,26 @@ const socialMediaOptions = [
   ];
   
   function SignupPage() {
+    const [firstname, setFirstname] = useState('');
+    const [lastname, setLastname] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [social, setSocial] = useState('');
+
+    const submitForm = async (e) => {
+      e.preventDefault();
+      const newUser = {
+        firstname,
+        lastname,
+        email,
+        password,
+        social
+      };
+  
+      await signup(newUser);
+    };
+    
+
     return ( 
       <>
         <div className="min-h-screen flex items-center justify-center bg-cover bg-[url('./assets/Images/bg-image.jpg')]">
@@ -20,24 +43,23 @@ const socialMediaOptions = [
               <h2 className="text-2xl font-semibold text-center leading-[33.5px] font-['Oxygen']">Create an account</h2>
   
               <div className="mb-4">
-                <p className="text-sm font-normal leading-[30px]">First name</p>
-                <input type="text" placeholder="First name" required className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
+                <p className="text-sm font-normal leading-[30px]">Firstname</p>
+                <input type="text" value={firstname} onChange={(e) => setFirstname(e.target.value)} placeholder="Samuel" required className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
               </div>
 
-              
               <div className="mb-4">
-                <p className="text-sm font-normal leading-[30px]">Last name</p>
-                <input type="text" placeholder="Last name" required className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
+                <p className="text-sm font-normal leading-[30px]">Lastname</p>
+                <input type="text" value={lastname} onChange={(e) => setLastname(e.target.value)} placeholder="Chukwuma" required className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
               </div>
   
               <div className="mb-4">
                 <p className="text-sm font-normal leading-[30px]">Email address</p>
-                <input type="email" placeholder="SamuelC@gmail.com" className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="SamuelC@gmail.com" className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
               </div>
   
               <div className="mb-4">
                 <p className="text-sm font-normal leading-[30px]">Password</p>
-                <input type="password" placeholder="*********" className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="*********" className="w-full h-10 p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]" />
               </div>
   
               <div className="mb-4">
@@ -46,7 +68,7 @@ const socialMediaOptions = [
                   <select className="w-full p-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#7FDBCA]">
                     
                     {socialMediaOptions.map((option) => (
-                      <option key={option} value={option}>{option}</option>
+                      <option key={option} value={social} onChange={(e) => setSocial(e.target.value)}>{option}</option>
                     ))}
                   </select>
                   <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
@@ -80,10 +102,10 @@ const socialMediaOptions = [
                 <span className="text-sm text-gray-400 font-normal leading-[30px]">Sign in with Google</span>
               </div>
   
-              <button type="submit" className="mt-3 w-full h-10 bg-[#7FDBCA] text-white rounded-[5px] cursor-pointer hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500">Signup</button>
+              <button type="submit" onClick={submitForm} className="mt-3 w-full h-10 bg-[#7FDBCA] text-white rounded-[5px] cursor-pointer hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500">Signup</button>
   
               <div className="mt-3 text-sm text-center">
-                <p>Already have an account? <a href="/login" className="text-[#7FDBCA] hover:underline">Login</a></p>
+                <p>Already have an account? <Link to="/login" className="text-[#7FDBCA] hover:underline">Login</Link></p>
               </div>
             </form>
           </div>

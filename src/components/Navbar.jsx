@@ -16,7 +16,7 @@ function Navbar() {
             <Link to="/login" className="text-[#7FDBCA] text-base font-normal font-['Acumin Pro'] leading-7">Log In</Link>
           </div>
           <div className=" bg-[#7FDBCA]  rounded-full justify-center items-center gap-2.5 flex">
-            <div className=" px-6 py-1.5 text-white text-base font-normal font-['Acumin Pro'] leading-7">Sign Up</div>
+            <Link to="/signup" className=" px-6 py-1.5 text-white text-base font-normal font-['Acumin Pro'] leading-7">Sign Up</Link>
           </div>
         </div>
       </div>

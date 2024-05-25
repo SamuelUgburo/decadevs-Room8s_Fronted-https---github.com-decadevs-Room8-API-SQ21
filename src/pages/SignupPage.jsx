@@ -83,7 +83,7 @@ const socialMediaOptions = [
               <button type="submit" className="mt-3 w-full h-10 bg-[#7FDBCA] text-white rounded-[5px] cursor-pointer hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500">Signup</button>
   
               <div className="mt-3 text-sm text-center">
-                <p>Already have an account? <a href="#" className="text-[#7FDBCA] hover:underline">Login</a></p>
+                <p>Already have an account? <a href="/login" className="text-[#7FDBCA] hover:underline">Login</a></p>
               </div>
             </form>
           </div>

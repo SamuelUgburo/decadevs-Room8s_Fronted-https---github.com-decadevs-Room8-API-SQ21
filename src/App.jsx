@@ -3,70 +3,49 @@ import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
-  RouterProvider,
-} from 'react-router-dom';
+  RouterProvider
+} from "react-router-dom"
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
-import HomePage from './pages/HomePage';
-import MainLayout from './layout/MainLayout';
-import ConfirmPassword from './pages/ConfirmPassword';
-import LoginPage from './pages/LoginPage';
-import ResetPassword from './pages/ResetPassword';
-import RegisterNumber from './pages/RegisterNumber';
-import SignupPage from './pages/SignupPage';
-import UserProfilePage from './pages/UserProfilePage';
-import ProfileLayout from './layout/ProfileLayout';
-import AboutMePage from './pages/AboutMePage';
-import ApartmentPage from './pages/ApartmentPage';
-import ApartmentDetailPage from './pages/ApartmentDetailPage';
+import HomePage from "./pages/HomePage";
+import MainLayout from "./layout/MainLayout";
+import ResetPassword from "./pages/ResetPassword";
+import LoginPage from "./pages/LoginPage";
+import ForgotPassword from "./pages/ForgotPassword";
+import RegisterNumber from "./pages/RegisterNumber";
+import SignupPage from "./pages/SignupPage";
+import UserProfilePage from "./pages/UserProfilePage";
+import ProfileLayout from "./layout/ProfileLayout";
+import AboutMePage from "./pages/AboutMePage";
+import { AuthProvider } from "./context/AuthContext";
+import ApartmentPage from "./pages/ApartmentPage";
+import RealtorsProfile from "./pages/RealtorsProfile";
+import ApartmentDetailPage from "./pages/ApartmentDetailPage";
 
-import ProfileModal from './components/modal/ProfileModal';
-import KYCModal from './components/modal/KycModal';
-import SuccessfulPasswdResetModal from './components/modal/SuccessfulPasswdResetModal';
-import ProfilePage from './pages/ProfilePage';
-
-function App() {
-  const [showProfileModal, setShowProfileModal] = useState(false);
-  const [showKYCModal, setShowKYCModal] = useState(false);
-  const [showSuccessfulPasswdResetModal, setShowSuccessfulPasswdResetModal] = useState(false);
-
-  const handleOpenProfileModal = () => setShowProfileModal(true);
-  const handleCloseProfileModal = () => setShowProfileModal(false);
-
-  const handleOpenKYCModal = () => setShowKYCModal(true);
-  const handleCloseKYCModal = () => setShowKYCModal(false);
-
-  const handleOpenSuccessfulPasswdResetModal = () => setShowSuccessfulPasswdResetModal(true);
-  const handleCloseSuccessfulPasswdResetModal = () => setShowSuccessfulPasswdResetModal(false);
-
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/confirmpassword" element={<ConfirmPassword />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/registernumber" element={<RegisterNumber />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/profilepage" element={
-          <ProfilePage
-            onOpenProfileModal={handleOpenProfileModal}
-            onOpenKYCModal={handleOpenKYCModal}
-            onOpenSuccessfulPasswdResetModal={handleOpenSuccessfulPasswdResetModal}
-          />
-        } />
-        <Route path="/userProfile" element={<UserProfilePage />} />
-        <Route path="/profile" element={<ProfileLayout />}>
-          <Route path="/profile/about-me" element={<AboutMePage />} />
-        </Route>
-        <Route path="/apartment" element={<ApartmentPage />} />
-        <Route path="/ApartmentDetail" element={<ApartmentDetailPage />} />
-      </Route>
-    )
-  );
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<MainLayout />}>
+      <Route index element={<HomePage />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/registernumber" element={<RegisterNumber/>} />
+      <Route path="/signup" element={<SignupPage/>}/>
+      <Route path="/apartment" element={<ApartmentPage/>} />
+      <Route path="/user-profile" element={<UserProfilePage/>} />
+      <Route path="/apartment-details" element={<ApartmentDetailPage/>} />
+      <Route path="/realtorsprofile" element={<RealtorsProfile/>} />
+    </Route>
+  )
+);
 
   return (
     <>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+        <ToastContainer />
+      </AuthProvider>
       <ProfileModal show={showProfileModal} onClose={handleCloseProfileModal} />
       <KYCModal show={showKYCModal} onClose={handleCloseKYCModal} />
       <SuccessfulPasswdResetModal show={showSuccessfulPasswdResetModal} onClose={handleCloseSuccessfulPasswdResetModal} />

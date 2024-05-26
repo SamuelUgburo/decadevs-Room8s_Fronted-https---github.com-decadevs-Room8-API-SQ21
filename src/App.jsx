@@ -22,6 +22,7 @@ import { AuthProvider } from "./context/AuthContext";
 import ApartmentPage from "./pages/ApartmentPage";
 import RealtorsProfile from "./pages/RealtorsProfile";
 import ApartmentDetailPage from "./pages/ApartmentDetailPage";
+import ProfileModal from './components/modal/ProfileModal';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -47,9 +48,9 @@ function App(){
         <RouterProvider router={router} />
         <ToastContainer />
       </AuthProvider>
-      <ProfileModal show={showProfileModal} onClose={handleCloseProfileModal} />
+      {/* <ProfileModal show={showProfileModal} onClose={handleCloseProfileModal} />
       <KYCModal show={showKYCModal} onClose={handleCloseKYCModal} />
-      <SuccessfulPasswdResetModal show={showSuccessfulPasswdResetModal} onClose={handleCloseSuccessfulPasswdResetModal} />
+      <SuccessfulPasswdResetModal show={showSuccessfulPasswdResetModal} onClose={handleCloseSuccessfulPasswdResetModal} /> */}
     </>
   );
 }

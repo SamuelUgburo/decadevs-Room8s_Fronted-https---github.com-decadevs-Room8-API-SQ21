@@ -13,6 +13,11 @@ function ApartmentPage() {
         <Apartment2 />
         <Footer />
         <FooterNav /> 
+      <ApartmentNavbar />
+      <TopContainer />
+      <Apartment2 />
+      <Footer />
+      <FooterNav />
     </div>
   )
 }

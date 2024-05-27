@@ -12,6 +12,8 @@ export default {
         inter: ['Inter', 'sans-serif'],
         nunito: ['Nunito', 'sans-serif'],
         heebo: ['Heebo', 'sans-serif'],
+        notosans: ["Noto Sans", 'sans-serif'],
+        outfit: ["Outfit", 'sans-serif'],
         // Add more custom font families as needed
       },
       colors: {

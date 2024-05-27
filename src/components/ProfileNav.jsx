@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 
 function ProfileNav({notifications = 3, initials = "SC"}) {
   return (
-    <div className='pl-6 pr-11 py-2 shadow-[0_4px_8px_0px_rgba(0,0,0,0.04)]'>
+    <div className='pl-6 pr-11 py-2 shadow-[0_4px_8px_0px_rgba(0,0,0,0.04)] bg-white'>
         <div className="flex justify-between items-center">
-            <div className="text-[#7FDBCA] text-2xl font-'Oxygen' leading-7">Room8s</div>
-            <input className="py-3 px-4 flex flex-grow max-w-[50%] bg-white rounded-full border text-gray-300 text-base font-normal font-['Inter'] leading-normal" placeholder='Search for Apartments.....' />
+            <div className="text-[#7FDBCA] text-2xl font-Oxygen font-bold leading-7">Room8s</div>
+            <input className="py-3 px-4 flex flex-grow max-w-[50%] bg-white rounded-full border text-gray-300 text-base font-normal font-inter leading-normal" placeholder='Search for Apartments.....' />
             <div className="justify-center items-center gap-2 inline-flex">
                 <div className="flex flex-col justify-center">
                     <div className="mb-[-10px] ml-5 w-5 h-5 bg-[#7FDBCA] rounded-xl shadow border-2 border-white flex justify-center items-center">

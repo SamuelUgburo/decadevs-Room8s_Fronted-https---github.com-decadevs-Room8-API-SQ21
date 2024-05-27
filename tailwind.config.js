@@ -12,6 +12,8 @@ export default {
         inter: ['Inter', 'sans-serif'],
         nunito: ['Nunito', 'sans-serif'],
         heebo: ['Heebo', 'sans-serif'],
+        notosans: ["Noto Sans", 'sans-serif'],
+        outfit: ["Outfit", 'sans-serif'],
         // Add more custom font families as needed
       },
       colors: {
@@ -20,6 +22,10 @@ export default {
         customGray: '#98A2B3',
         customgray800: '#212121',
         customgray900: '#101828'
+      },
+      width: {
+        'custom-998': '998px',
+        'custom-900': '900px',
       },
       },
   },

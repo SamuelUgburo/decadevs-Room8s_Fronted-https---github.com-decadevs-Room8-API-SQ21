@@ -45,7 +45,7 @@ const AptDescription = () => {
                                 <p className='font-bold md:text-2xl mb-3'> MEET THE REALTOR</p>
                                 <div className='flex  w-full'>
                                         <div className='mr-2 flex justify-center items-center'><img className="size-20 md:size-30" src="./src/assets/Images/realtorpic.png" alt="" srcset="" /></div>
-                                        <div className='flex-col text-sm  md:text-2xl md:space-y-2'>
+                                        <div className='flex-col text-sm  md:text-xl md:space-y-2'>
                                             <p className=' md:text-xl mb-1 flex md:justify-center'>Bankole Yufus</p>
                                             <p>BankoleYufus@gmail.com</p>
                                             <p className=' flex ml-6  text-[#219653] '> <a className='flex border p-1  border-[#219653] rounded-full w-26' href=""> <img className='ml-1 mr-3 size-5 md:size-7' src="./src/assets/Images/chat.png" alt="" />  Start chat</a></p>

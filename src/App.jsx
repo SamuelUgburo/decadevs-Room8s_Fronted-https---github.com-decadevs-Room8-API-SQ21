@@ -4,9 +4,9 @@ import {
   createRoutesFromElements,
   RouterProvider
 } from "react-router-dom"
+
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
 import HomePage from "./pages/HomePage";
 import MainLayout from "./layout/MainLayout";
 import ResetPassword from "./pages/ResetPassword";
@@ -18,6 +18,9 @@ import UserProfilePage from "./pages/UserProfilePage";
 import ProfileLayout from "./layout/ProfileLayout";
 import AboutMePage from "./pages/AboutMePage";
 import { AuthProvider } from "./context/AuthContext";
+import Saved from "./pages/Saved";
+import ProfileSettings from "./pages/ProfileSettings";
+import PropertyListing from "./pages/PropertyListing";
 import ApartmentPage from "./pages/ApartmentPage";
 import RealtorsProfile from "./pages/RealtorsProfile";
 import ApartmentDetailPage from "./pages/ApartmentDetailPage";
@@ -31,6 +34,12 @@ const router = createBrowserRouter(
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/registernumber" element={<RegisterNumber/>} />
       <Route path="/signup" element={<SignupPage/>}/>
+      <Route path="profile" element={<ProfileLayout />}>
+        <Route index element={<ProfileSettings />} />
+        <Route path="propertylisting" element={<PropertyListing />} />
+        <Route path="saved" element={<Saved />} />
+        <Route path="about-me" element={<AboutMePage />} />
+      </Route>
       <Route path="/apartment" element={<ApartmentPage/>} />
       <Route path="/user-profile" element={<UserProfilePage/>} />
       <Route path="/apartment-details" element={<ApartmentDetailPage/>} />
@@ -40,6 +49,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
+
   return (
     <>
       <AuthProvider>
@@ -47,7 +57,7 @@ function App() {
         <ToastContainer />
       </AuthProvider>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

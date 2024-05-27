@@ -7,11 +7,11 @@ import Apartment2 from '../components/Apartment2'
 function ApartmentPage() {
   return (
     <div>
-        <ApartmentNavbar />
-        <TopContainer />
-        <Apartment2 />
-        <Footer />
-        <FooterNav /> 
+      <ApartmentNavbar />
+      <TopContainer />
+      <Apartment2 />
+      <Footer />
+      <FooterNav />
     </div>
   )
 }

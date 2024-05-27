@@ -48,9 +48,6 @@ function App(){
         <RouterProvider router={router} />
         <ToastContainer />
       </AuthProvider>
-      {/* <ProfileModal show={showProfileModal} onClose={handleCloseProfileModal} />
-      <KYCModal show={showKYCModal} onClose={handleCloseKYCModal} />
-      <SuccessfulPasswdResetModal show={showSuccessfulPasswdResetModal} onClose={handleCloseSuccessfulPasswdResetModal} /> */}
     </>
   );
 }

@@ -24,6 +24,8 @@ import PropertyListing from "./pages/PropertyListing";
 import ApartmentPage from "./pages/ApartmentPage";
 import RealtorsProfile from "./pages/RealtorsProfile";
 import ApartmentDetailPage from "./pages/ApartmentDetailPage";
+import Dashboard from "./pages/Dashboard";
+import AdminLayout from "./layout/AdminLayout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -39,6 +41,10 @@ const router = createBrowserRouter(
         <Route path="propertylisting" element={<PropertyListing />} />
         <Route path="saved" element={<Saved />} />
         <Route path="about-me" element={<AboutMePage />} />
+      </Route>
+      <Route path="/admin" element={<AdminLayout/>}>
+        <Route index element={<ProfileSettings />} />
+        
       </Route>
       <Route path="/apartment" element={<ApartmentPage/>} />
       <Route path="/user-profile" element={<UserProfilePage/>} />

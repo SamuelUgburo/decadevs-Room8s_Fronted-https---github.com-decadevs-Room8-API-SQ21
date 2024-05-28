@@ -1,5 +1,5 @@
 import React from 'react';
-import AnalyticsSidebar from '../components/AnalyticsSidebar'; 
+
 import AnalyticsNavbar from '../components/AnalyticsNavbar'; 
 import VisitingCustomers from '../components/VisitingCustomers';
 import AverageUsageTime from '../components/AverageUsageTime';

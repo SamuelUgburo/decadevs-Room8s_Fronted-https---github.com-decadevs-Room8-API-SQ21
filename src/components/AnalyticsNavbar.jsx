@@ -3,7 +3,7 @@ import { FaBell } from 'react-icons/fa';
 
 const Navbar = () => {
   return (
-    <div className="bg-white shadow-md mb-2"> 
+    <div className="bg-white  mb-2"> 
       <div className="w-full px-4 flex items-center justify-between py-2">
         <div className="flex items-center">
           

@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Route,
   createBrowserRouter,
@@ -24,6 +25,7 @@ import PropertyListing from "./pages/PropertyListing";
 import ApartmentPage from "./pages/ApartmentPage";
 import RealtorsProfile from "./pages/RealtorsProfile";
 import ApartmentDetailPage from "./pages/ApartmentDetailPage";
+import ProfileModal from './components/modal/ProfileModal';
 import Dashboard from "./pages/Dashboard";
 import AdminLayout from "./layout/AdminLayout";
 import UserAnalytics from "./pages/UserAnalytics";
@@ -58,6 +60,7 @@ const router = createBrowserRouter(
     
   )
 );
+
 
 function App() {
 

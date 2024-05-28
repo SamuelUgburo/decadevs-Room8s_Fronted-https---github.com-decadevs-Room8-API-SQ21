@@ -43,6 +43,7 @@ const router = createBrowserRouter(
         <Route path="saved" element={<Saved />} />
         <Route path="about-me" element={<AboutMePage />} />
       </Route>
+      
       <Route path="/apartment" element={<ApartmentPage/>} />
       <Route path="/user-profile" element={<UserProfilePage/>} />
       <Route path="/apartment-details" element={<ApartmentDetailPage/>} />

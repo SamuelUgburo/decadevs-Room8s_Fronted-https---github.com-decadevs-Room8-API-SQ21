@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Route,
   createBrowserRouter,
@@ -24,6 +25,7 @@ import PropertyListing from "./pages/PropertyListing";
 import ApartmentPage from "./pages/ApartmentPage";
 import RealtorsProfile from "./pages/RealtorsProfile";
 import ApartmentDetailPage from "./pages/ApartmentDetailPage";
+import ProfileModal from './components/modal/ProfileModal';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -47,6 +49,7 @@ const router = createBrowserRouter(
     </Route>
   )
 );
+
 
 function App() {
 

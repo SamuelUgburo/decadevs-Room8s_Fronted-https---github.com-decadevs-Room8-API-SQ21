@@ -7,10 +7,11 @@ import ApartmentImage1 from '../components/ApartmentImage1'
 import AptDescription from '../components/AptDescription'
 import AvailableRooms from '../components/AvailableRooms'
 import ApartmentNavbar from '../components/ApartmentNavbar'
+import ProfileNav from '../components/ProfileNav'
 const ApartmentDetailPage = () => {
   return (
     <>
-    <ApartmentNavbar />
+    <ProfileNav />
     <PagePath/>
     <ApartmentImage1/>
     <AptDescription/>

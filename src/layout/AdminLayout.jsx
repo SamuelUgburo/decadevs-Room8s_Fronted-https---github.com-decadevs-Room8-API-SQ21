@@ -40,7 +40,7 @@ const AdminLayout = () => {
       </clipPath>
       </defs>
       </svg>) },
-      { name: 'Tenant Database', path: '/admin/tenant-database', icon: (<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none">
+      { name: 'Tenant Database', path: '/admin/tenant-database', icon: (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <g clip-path="url(#clip0_499_864)">
       <path d="M13 2.05005V5.08005C16.39 5.57005 19 8.47005 19 12C19 12.9 18.82 13.75 18.52 14.54L21.12 16.07C21.68 14.83 22 13.45 22 12C22 6.82005 18.05 2.55005 13 2.05005ZM12 19C8.13 19 5 15.87 5 12C5 8.47005 7.61 5.57005 11 5.08005V2.05005C5.94 2.55005 2 6.81005 2 12C2 17.52 6.47 22 11.99 22C15.3 22 18.23 20.39 20.05 17.91L17.45 16.38C16.17 17.98 14.21 19 12 19Z" fill="#131A29" stroke="grey" stroke-width="" fill-opacity="0.5"/>
       </g>
@@ -82,36 +82,36 @@ const AdminLayout = () => {
     ];
   return (
     <>
-    <div className='w-full flex'>
-        <div className='w-[15%] pt-10 h-screen'>
-        <div className="text-[#7FDBCA] text-3xl pb-20  pl-6 lg:pl-14 font-Oxygen font-bold leading-7">Room8s</div>
-        {navItems.map((item) => (
-          <NavLink
-            key={item.path} 
-            to={item.path}
-            className={({ isActive }) =>
-              `text-opacity-50 pl-6 lg:pl-14 py-2 font-notosans text-xl font-normal flex items-start content-center flex-col ${
-                isActive ? 'text-[#7FDBCA] font-bold' : 'text-[#000000]'
-              } hover:text-[#7FDBCA]`
-            }
-            ref={navRefs[item.path]}
-          >
-            <div className="flex items-center">
-              <div
-                className={`mr-2 ${location.pathname === item.path ? 'text-[#7FDBCA]' : 'text-current'}`}>  
-                {item.icon}
-               </div>
-             <div>{item.name}</div>
-           
-            </div>
-        
-          </NavLink>
-        ))}
+    <div className=' flex'>
+        <div className='w-[15%] px-3 pt-10 h-screen'>
+          <div className="text-[#7FDBCA] text-3xl pb-20 font-Oxygen font-bold leading-7">Room8s</div>
+          {navItems.map((item) => (
+            <NavLink
+              key={item.path} 
+              to={item.path}
+              className={({ isActive }) =>
+                `text-opacity-50 py-2 font-['Outfit'] text-sm font-semibold flex items-start content-center flex-col ${
+                  isActive ? 'text-[#7FDBCA] font-bold' : 'text-[#000000]'
+                } hover:text-[#7FDBCA]`
+              }
+              ref={navRefs[item.path]}
+            >
+              <div className="flex items-center">
+                <div
+                  className={`md:mr-2 ${location.pathname === item.path ? 'text-[#7FDBCA]' : 'text-current'}`}>  
+                  {item.icon}
+                </div>
+              <div>{item.name}</div>
+            
+              </div>
+          
+            </NavLink>
+          ))}
         </div>
         <div className='w-[85%]'>
 
-            <div className='w-full'> <AdminNav/></div>
-            <div className='flex min-h-screen bg-gray-100 ml-20 mt-4'>  <Outlet /> </div>
+           
+            <div className='flex min-h-screen bg-gray-100 '>  <Outlet  /> </div>
        
         </div>
     </div>

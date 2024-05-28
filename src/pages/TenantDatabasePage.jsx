@@ -1,4 +1,5 @@
 import React from 'react'
+import AdminNav from '../components/AdminNav';
 
 const TenantDatabasePage = () => {
 
@@ -14,7 +15,9 @@ const TenantDatabasePage = () => {
       ];
     
   return (
-    <div className='w-[1920px] m-14 h-[800px]'>
+    < div className='w-full m-0'>
+    <AdminNav/>
+    <div className='w-[920px] m-14 h-auto'>
         <div className='font-semibold text-2xl mb-10'>Tenants Database</div>
         <div className="overflow-x-auto ">
           <table className="divide-y divide-gray-200 w-full">
@@ -42,6 +45,7 @@ const TenantDatabasePage = () => {
             </tbody>
           </table>
         </div>
+    </div>
     </div>
   )
 }

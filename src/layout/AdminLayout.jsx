@@ -105,7 +105,7 @@ const AdminLayout = () => {
         <div className='w-[85%]'>
 
             <div className='w-full'> <AdminNav/></div>
-            <div>  <Outlet /> </div>
+            <div className='flex min-h-screen bg-gray-100 ml-20 mt-4'>  <Outlet /> </div>
        
         </div>
     </div>

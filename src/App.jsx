@@ -26,6 +26,7 @@ import RealtorsProfile from "./pages/RealtorsProfile";
 import ApartmentDetailPage from "./pages/ApartmentDetailPage";
 import Dashboard from "./pages/Dashboard";
 import AdminLayout from "./layout/AdminLayout";
+import TenantDatabasePage from "./pages/TenantDatabasePage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,7 +44,8 @@ const router = createBrowserRouter(
         <Route path="about-me" element={<AboutMePage />} />
       </Route>
       <Route path="/admin" element={<AdminLayout/>}>
-        <Route index element={<ProfileSettings />} />
+        <Route index element={<Dashboard/>} />
+        <Route path="/admin/tenant-database" element={<TenantDatabasePage/>}/>
         
       </Route>
       <Route path="/apartment" element={<ApartmentPage/>} />

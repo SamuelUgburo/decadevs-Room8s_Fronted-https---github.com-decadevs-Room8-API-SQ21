@@ -89,13 +89,19 @@ const AdminLayout = () => {
           <NavLink
             key={item.path} 
             to={item.path}
-            className="text-[#000000] text-opacity-50 pl-6 lg:pl-14 py-2 font-notosans text-xl font-normal flex  items-start content-center flex-col hover:text-[#7FDBCA] "
-            activeClassName="font-bold"
+            className={({ isActive }) =>
+              `text-opacity-50 pl-6 lg:pl-14 py-2 font-notosans text-xl font-normal flex items-start content-center flex-col ${
+                isActive ? 'text-[#7FDBCA] font-bold' : 'text-[#000000]'
+              } hover:text-[#7FDBCA]`
+            }
             ref={navRefs[item.path]}
           >
-           <div className='flex items-end'>
-            <div className='mr-2'>  {item.icon}</div>
-            <div>{item.name}</div>
+            <div className="flex items-center">
+              <div
+                className={`mr-2 ${location.pathname === item.path ? 'text-[#7FDBCA]' : 'text-current'}`}>  
+                {item.icon}
+               </div>
+             <div>{item.name}</div>
            
             </div>
         

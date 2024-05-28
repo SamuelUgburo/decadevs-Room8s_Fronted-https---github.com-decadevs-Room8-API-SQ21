@@ -1,5 +1,6 @@
-// src/pages/UserAnalytics.jsx
 import React from 'react';
+import AnalyticsSidebar from '../components/AnalyticsSidebar'; 
+import AnalyticsNavbar from '../components/AnalyticsNavbar'; 
 import VisitingCustomers from '../components/VisitingCustomers';
 import AverageUsageTime from '../components/AverageUsageTime';
 import UserDemographicSex from '../components/UserDemographicSex';
@@ -8,17 +9,23 @@ import UserLocationHeatmap from '../components/UserLocationHeatmap';
 
 const UserAnalytics = () => {
   return (
-    <div className="p-6 bg-gray-100">
-      <h2 className="text-2xl font-bold mb-6">User Analytics</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <VisitingCustomers />
-        <AverageUsageTime />
+    <div className="flex w-full h-screen">
+      
+      <div className="flex-1 flex flex-col "> {/* Added ml-64 to account for the sidebar width */}
+        <AnalyticsNavbar className="" />
+        <div className="p-6 bg-gray-100 flex-1 mt-12">
+          <h2 className="text-2xl font-bold mb-6">User Analytics</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <VisitingCustomers />
+            <AverageUsageTime />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <UserDemographicSex />
+            <UserDemographicAge />
+          </div>
+          <UserLocationHeatmap />
+        </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <UserDemographicSex />
-        <UserDemographicAge />
-      </div>
-      <UserLocationHeatmap />
     </div>
   );
 };

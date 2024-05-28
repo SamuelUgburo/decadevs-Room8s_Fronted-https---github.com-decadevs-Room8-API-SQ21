@@ -91,7 +91,7 @@ const AdminLayout = () => {
             to={item.path}
             className={({ isActive }) =>
               `text-opacity-50 pl-6 lg:pl-14 py-2 font-notosans text-xl font-normal flex items-start content-center flex-col ${
-                isActive ? 'text-[#7FDBCA] font-bold' : 'text-[#000000]'
+                isActive ? 'text-[#7FDBCA] font-bold' : 'text-[rgb(0,0,0)]'
               } hover:text-[#7FDBCA]`
             }
             ref={navRefs[item.path]}
@@ -110,8 +110,8 @@ const AdminLayout = () => {
         </div>
         <div className='w-[85%]'>
 
-            <div className='w-full'> <AdminNav/></div>
-            <div className='flex min-h-screen bg-gray-100 ml-20 mt-4'>  <Outlet /> </div>
+          
+            <div className='w-full flex min-h-screen bg-gray-100 ml-20 mt-4'>  <Outlet /> </div>
        
         </div>
     </div>

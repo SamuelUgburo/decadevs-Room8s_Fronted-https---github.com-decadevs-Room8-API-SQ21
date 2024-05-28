@@ -48,10 +48,11 @@ const router = createBrowserRouter(
       <Route path="/user-profile" element={<UserProfilePage/>} />
       <Route path="/apartment-details" element={<ApartmentDetailPage/>} />
       <Route path="/realtorsprofile" element={<RealtorsProfile/>} />
-      <Route path="/user-analytics" element={<UserAnalytics />} />
+      
       <Route path="/admin" element={<AdminLayout/>}>
         <Route index element={<Dashboard/>} />
         <Route path="/admin/tenant-database" element={<TenantDatabasePage/>}/>
+        <Route path="/admin/user-analytics" element={<UserAnalytics/>} />
       </Route>
     </Route>
     
